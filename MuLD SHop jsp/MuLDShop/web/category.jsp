@@ -4,6 +4,7 @@
     Author     : phong
 --%>
 
+<%@page import="model.DanhMuc"%>
 <%@page import="dao.DanhMucDAOImpl"%>
 <%@page import="dao.DanhMucDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
