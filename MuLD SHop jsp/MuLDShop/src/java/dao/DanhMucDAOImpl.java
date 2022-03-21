@@ -5,7 +5,7 @@
  */
 package dao;
 
-import connect.DBconnect;
+import connect.DBConnect;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,28 +19,32 @@ import model.DanhMuc;
  *
  * @author phong
  */
-public class DanhMucDAOImpl implements DanhMucDAO{
+public class DanhMucDAOImpl {
 
-    @Override
     public ArrayList<DanhMuc> getListDanhMucCha() {
-        Connection connection = null;
+
+        Connection connection = DBConnect.getConnection();
         String sql = "SELECT * from danh_muc WHERE danh_muc_cha='null'";
         ArrayList<DanhMuc> arr = new ArrayList<>();
         try {
+            
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            DanhMuc dm = new DanhMuc();
-            dm.setMa_danh_muc(rs.getString("ma_danh_muc"));
-            dm.setTen_danh_muc(rs.getString("ten_danh_muc"));
-            dm.setDanh_muc_cha(rs.getString("danh_muc_cha"));
-            arr.add(dm);
-            
+            while (rs.next()){
+                DanhMuc dm = new DanhMuc();
+                dm.setMa_danh_muc(rs.getString("ma_danh_muc"));
+                dm.setTen_danh_muc(rs.getString("ten_danh_muc"));
+                dm.setDanh_muc_cha(rs.getString("danh_muc_cha"));
+                arr.add(dm);
+            }
             connection.close();
-        
         } catch (SQLException ex) {
             Logger.getLogger(DanhMucDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         return arr;
-    }
+        
+        
+    } 
     
 }

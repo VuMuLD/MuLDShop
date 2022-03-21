@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 
-public class DBconnect {
+public class DBConnect {
     
     /*USE BELOW METHOD FOR YOUR DATABASE CONNECTION FOR BOTH SINGLE AND MULTILPE SQL SERVER INSTANCE(s)*/
     /*DO NOT EDIT THE BELOW METHOD, YOU MUST USE ONLY THIS ONE FOR YOUR DATABASE CONNECTION*/
@@ -28,7 +28,7 @@ public class DBconnect {
     
      public static void main(String[] args) {
         try {
-            System.out.println(new DBconnect().getConnection());
+            System.out.println(new DBConnect().getConnection());
         } catch (Exception e) {
         }
     }

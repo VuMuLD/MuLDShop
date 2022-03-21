@@ -73,7 +73,7 @@
 <!-- LOGO -->
 <div class="col-md-3">
 <div class="header-logo">
-<a href="#" class="logo">
+<a href="./img/logo.png" class="logo">
 <img src="./img/logo.png" alt="">
 </a>
 </div>

@@ -50,69 +50,43 @@
 
     </head>
     <body>
-<!-- SECTION -->
+
+        <!-- SECTION -->
+        
+         
 <div class="section">
 <!-- container -->
 <div class="container">
 <!-- row -->
 <div class="row">
-<!-- ASIDE -->
-<%
+       <%
     DanhMucDAOImpl DanhMucDAO = new DanhMucDAOImpl();
     %>
+<!-- ASIDE -->
+
 <div id="aside" class="col-md-3">
     <!-- aside Widget -->
+
     <div class="aside">
-        <%for(DanhMuc danh_muc_cha : DanhMucDAO.getListDanhMucCha())
-                  
-                %>
+
             <h3 class="aside-title">Danh Mục</h3>
             <div class="checkbox-filter">
+                        <%
+            for(DanhMuc danh_muc_cha: DanhMucDAO.getListDanhMucCha())
+                  
+            {%>
 
-                    <div class="input-checkbox">
+                    <div class="input-checkbox"> 
 
-                            <input type="checkbox" id="category-1">
-                            <label for="category-1">
-                                    <span></span>
-                                    Laptop
-                                    <small>(120)</small>
-                            </label>
-                    </div>
- 
-                <%=danh_muc_cha.getTen_danh_muc() %>
-                    <div class="input-checkbox">
-                            <input type="checkbox" id="category-2">
-                            <label for="category-2">
-                                    <span></span>
-                                    Smartphone
-                                    <small>(740)</small>
-                            </label>
-                    </div>
 
-                    <div class="input-checkbox">
-                            <input type="checkbox" id="category-3">
-                            <label for="category-3">
-                                    <span></span>
-                                    Camera
-                                    <small>(1450)</small>
-                            </label>
-                    </div>
-
-                    <div class="input-checkbox">
-                            <input type="checkbox" id="category-4">
-                            <label for="category-4">
-                                    <span></span>
-                                    Phụ Kiện
-                                    <small>(578)</small>
-                            </label>
-                    </div> 
-                <%
-                    }
-                %>
-
-                    </div>
+           <%=danh_muc_cha.getTen_danh_muc() %>
+</div>
+                    
             </div>
     </div>
+           <%
+                    }
+                %>
     <!-- /aside Widget -->
 
     <!-- aside Widget -->
@@ -133,6 +107,12 @@
                     </div>
             </div>
     </div>
+    </div>
+     </div>
+     </div>
+     </div>
+    
+    
     <!-- /aside Widget -->
 
     <!-- aside Widget -->
@@ -144,4 +124,5 @@
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
     </body>
+    
 </html>
